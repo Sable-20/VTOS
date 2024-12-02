@@ -1,11 +1,10 @@
 <div align="center">
-   <img src="	https://readmemaker.com/static/media/logo.95b37b622ac102be3dec.png" width="150px" alt="Project Logo" />
-    <h1>VTOS</h1>
+   <img src="static/imgs/logo.svg" width="300px" alt="Project Logo" />
+    <!-- <h1>VTOS</h1> -->
 </div>
 
-## Badges
-
-Display your project’s achievements with badges from services like [shields.io](https://shields.io/):
+<br>
+<h1 align="center"><strong><i>VTOS</i></strong></h1>
 
 <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Sable-20/VTOS?style=for-the-badge">
 
