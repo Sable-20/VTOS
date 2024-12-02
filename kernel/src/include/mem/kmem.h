@@ -1,5 +1,5 @@
-#ifndef MEM_H_
-#define MEM_H_
+#ifndef KMEM_H_
+#define KMEM_H_
 
 #include <stddef.h>
 #include <stdint.h>

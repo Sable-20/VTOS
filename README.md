@@ -1,27 +1,47 @@
-# Limine C Template
+<div align="center">
+   <img src="	https://readmemaker.com/static/media/logo.95b37b622ac102be3dec.png" width="150px" alt="Project Logo" />
+    <h1>VTOS</h1>
+</div>
 
-This repository will demonstrate how to set up a basic x86-64 kernel in C using Limine.
+## Badges
 
-It is recommended to cross reference the contents of this repository with [the Limine Bare Bones](https://osdev.wiki/wiki/Limine_Bare_Bones) OSDev wiki page.
+Display your project’s achievements with badges from services like [shields.io](https://shields.io/):
 
-## How to use this?
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Sable-20/VTOS?style=for-the-badge">
 
-### Dependencies
 
-Any `make` command depends on GNU make (`gmake`) and is expected to be run using it. This usually means using `make` on most GNU/Linux distros, or `gmake` on other non-GNU systems.
+## Description
 
-All `make all*` targets depend on a GNU-compatible C toolchain capable of generating x86-64 ELF objects. Usually `gcc/binutils` or `clang/llvm/lld` provided by any x86-64 UNIX like (including Linux) distribution will suffice.
+Provide a detailed description of the project. Explain its purpose, goals, and any other relevant information that would help someone understand the project's significance.
 
-Additionally, building an ISO with `make all` requires `xorriso`, and building a HDD/USB image with `make all-hdd` requires `sgdisk` (usually from `gdisk` or `gptfdisk` packages) and `mtools`.
+## Installation
 
-### Makefile targets
+Install the project with npm:
 
-Running `make all` will compile the kernel (from the `kernel/` directory) and then generate a bootable ISO image.
+```bash
+npm install project-name
+cd project-name
+```
 
-Running `make all-hdd` will compile the kernel and then generate a raw image suitable to be flashed onto a USB stick or hard drive/SSD.
+## Roadmap
 
-Running `make run` will build the kernel and a bootable ISO (equivalent to make all) and then run it using `qemu` (if installed).
+Here’s a glimpse into the exciting journey ahead for our project:
 
-Running `make run-hdd` will build the kernel and a raw HDD image (equivalent to make all-hdd) and then run it using `qemu` (if installed).
+### Upcoming Milestones
 
-The `run-uefi` and `run-hdd-uefi` targets are equivalent to their non `-uefi` counterparts except that they boot `qemu` using a UEFI-compatible firmware.
+- **Q4 2024**: 
+  - [Feature 1]: kprint() and serial output
+
+- **2025**: 
+  - [Future Feature]: Terminal Scrolling
+
+We’re excited about what’s coming and will keep you updated as we progress. Your feedback and support are crucial as we build the future!
+
+
+## Contributors
+
+- **Sable-20**: [Contributer]
+- **Contributor 2**: [Role/Contribution]
+- **Contributor 3**: [Role/Contribution]
+
+A big thank you to everyone who made this project possible!
