@@ -104,7 +104,7 @@ override HEADER_DEPS := $(addprefix obj/,$(CFILES:.c=.c.d) $(ASFILES:.S=.S.d))
 all: bin/$(OUTPUT)
 
 # Link rules for building the C compiler runtime.
-cc-runtime-x86_64/cc-runtime.a: GNUmakefile cc-runtime/*
+cc-runtime-x86_64/cc-runtime.a: Makefile cc-runtime/*
 	rm -rf cc-runtime-x86_64
 	cp -r cc-runtime cc-runtime-x86_64
 	$(MAKE) -C cc-runtime-x86_64 -f cc-runtime.mk \
@@ -114,7 +114,7 @@ cc-runtime-x86_64/cc-runtime.a: GNUmakefile cc-runtime/*
 		CPPFLAGS='-isystem ../freestnd-c-hdrs-0bsd -DCC_RUNTIME_NO_FLOAT'
 
 # Link rules for the final executable.
-bin/$(OUTPUT): GNUmakefile linker.ld $(OBJ) cc-runtime-x86_64/cc-runtime.a
+bin/$(OUTPUT): Makefile linker.ld $(OBJ) cc-runtime-x86_64/cc-runtime.a
 	mkdir -p "$$(dirname $@)"
 	$(LD) $(OBJ) cc-runtime-x86_64/cc-runtime.a $(LDFLAGS) -o $@
 
@@ -122,17 +122,17 @@ bin/$(OUTPUT): GNUmakefile linker.ld $(OBJ) cc-runtime-x86_64/cc-runtime.a
 -include $(HEADER_DEPS)
 
 # Compilation rules for *.c files.
-obj/%.c.o: src/%.c GNUmakefile
+obj/%.c.o: src/%.c Makefile
 	mkdir -p "$$(dirname $@)"
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 # Compilation rules for *.S files.
-obj/%.S.o: src/%.S GNUmakefile
+obj/%.S.o: src/%.S Makefile
 	mkdir -p "$$(dirname $@)"
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 # Compilation rules for *.asm (nasm) files.
-obj/%.asm.o: src/%.asm GNUmakefile
+obj/%.asm.o: src/%.asm Makefile
 	mkdir -p "$$(dirname $@)"
 	nasm $(NASMFLAGS) $< -o $@
 
