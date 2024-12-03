@@ -19,7 +19,7 @@ AR := ar
 LD := ld
 
 # User controllable C flags.
-CFLAGS := -g -O2 -pipe
+CFLAGS := -g -O2 -pipe -I./include
 
 # User controllable C preprocessor flags. We set none by default.
 CPPFLAGS :=
@@ -32,7 +32,7 @@ LDFLAGS :=
 
 # Ensure the dependencies have been obtained.
 ifneq ($(shell ( test '$(MAKECMDGOALS)' = clean || test '$(MAKECMDGOALS)' = distclean ); echo $$?),0)
-    ifeq ($(shell ( ! test -d freestnd-c-hdrs-0bsd || ! test -d cc-runtime || ! test -f src/limine.h ); echo $$?),0)
+    ifeq ($(shell ( ! test -d freestnd-c-hdrs-0bsd || ! test -d cc-runtime || ! test -f kernel/limine.h ); echo $$?),0)
         $(error Please run the ./get-deps script first)
     endif
 endif
@@ -70,6 +70,7 @@ override CFLAGS += \
 
 # Internal C preprocessor flags that should not be changed by the user.
 override CPPFLAGS := \
+    -I kernel \
     -I src \
     -isystem freestnd-c-hdrs-0bsd \
     $(CPPFLAGS) \
@@ -93,9 +94,9 @@ override LDFLAGS += \
 
 # Use "find" to glob all *.c, *.S, and *.asm files in the tree and obtain the
 # object and header dependency file names.
-override CFILES := $(shell cd src && find -L * -type f -name '*.c' | LC_ALL=C sort)
-override ASFILES := $(shell cd src && find -L * -type f -name '*.S' | LC_ALL=C sort)
-override NASMFILES := $(shell cd src && find -L * -type f -name '*.asm' | LC_ALL=C sort)
+override CFILES := $(shell cd kernel && find -L * -type f -name '*.c' | LC_ALL=C sort)
+override ASFILES := $(shell cd kernel && find -L * -type f -name '*.S' | LC_ALL=C sort)
+override NASMFILES := $(shell cd kernel && find -L * -type f -name '*.asm' | LC_ALL=C sort)
 override OBJ := $(addprefix obj/,$(CFILES:.c=.c.o) $(ASFILES:.S=.S.o) $(NASMFILES:.asm=.asm.o))
 override HEADER_DEPS := $(addprefix obj/,$(CFILES:.c=.c.d) $(ASFILES:.S=.S.d))
 
@@ -122,17 +123,17 @@ bin/$(OUTPUT): Makefile linker.ld $(OBJ) cc-runtime-x86_64/cc-runtime.a
 -include $(HEADER_DEPS)
 
 # Compilation rules for *.c files.
-obj/%.c.o: src/%.c Makefile
+obj/%.c.o: kernel/%.c Makefile
 	mkdir -p "$$(dirname $@)"
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 # Compilation rules for *.S files.
-obj/%.S.o: src/%.S Makefile
+obj/%.S.o: kernel/%.S Makefile
 	mkdir -p "$$(dirname $@)"
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 # Compilation rules for *.asm (nasm) files.
-obj/%.asm.o: src/%.asm Makefile
+obj/%.asm.o: kernel/%.asm Makefile
 	mkdir -p "$$(dirname $@)"
 	nasm $(NASMFLAGS) $< -o $@
 
@@ -144,7 +145,7 @@ clean:
 # Remove everything built and generated including downloaded dependencies.
 .PHONY: distclean
 distclean: clean
-	rm -rf freestnd-c-hdrs-0bsd cc-runtime src/limine.h
+	rm -rf freestnd-c-hdrs-0bsd cc-runtime kernel/limine.h
 
 # Install the final built executable to its final on-root location.
 .PHONY: install

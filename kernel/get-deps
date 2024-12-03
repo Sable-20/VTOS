@@ -76,5 +76,5 @@ clone_repo_commit \
 
 download_by_hash \
     https://github.com/limine-bootloader/limine/raw/af981e39a592d6c5b856960d5253cd2340d5a2c8/limine.h \
-    src/limine.h \
+    kernel/limine.h \
     7bbe95e1842a27d3aad7a567806dc70cf14a87f8d71abb283ccf39fa64dcf53d

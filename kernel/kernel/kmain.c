@@ -1,6 +1,8 @@
 #include <stdbool.h>
 #include <limine.h>
-#include "include/mem/kmem.h"
+
+// USER DEFINED HEADERS
+#include <kernel/mem/mem.h>
 
 // Set the base revision to 3, this is recommended as this is the latest
 // base revision described by the Limine boot protocol specification.
@@ -54,7 +56,11 @@ void kmain(void) {
     // Fetch the first framebuffer.
     struct limine_framebuffer *framebuffer = framebuffer_request.response->framebuffers[0];
 
-    // Note: we assume the framebuffer model is RGB with 32-bit pixels.
+    // TODO: enable the SSFN renderer with a function
+
+    // TODO: pass the framebuffer and SSFN renderer to print function so that it's usable
+
+    // NOTE: we assume the framebuffer model is RGB with 32-bit pixels.
     for (size_t i = 0; i < 100; i++) {
         volatile uint32_t *fb_ptr = framebuffer->address;
         fb_ptr[i * (framebuffer->pitch / 4) + i] = 0xffffff;
