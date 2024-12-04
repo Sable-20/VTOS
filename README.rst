@@ -47,18 +47,18 @@ Upcoming Milestones
 
 :Q4 2024:
 
-   - [#] kprint() and serial output
+   #. kprint() and serial output
 
-      - [#] Use `SSFN <https://wiki.osdev.org/Scalable_Screen_Font>`__ to
+      - Use `SSFN <https://wiki.osdev.org/Scalable_Screen_Font>`__ to
          render things for ease
    
-   - [#] Complete using sphinx documentation for clarity and buildability
+   #. Complete using sphinx documentation for clarity and buildability
 
 :FY 2025:
 
-   -  [Future Feature]: Terminal Scrolling
-   -  modules
-   -  Rust
+   #.  [Future Feature]: Terminal Scrolling
+   #.  modules
+   #.  Rust
 
 We’re excited about what’s coming and will keep you updated as we
 progress. Your feedback and support are crucial as we build the future!
