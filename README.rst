@@ -12,7 +12,9 @@
 
 .. raw:: html
 
-   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Sable-20/VTOS?style=for-the-badge">
+   <div align="center">
+      <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Sable-20/VTOS?style=for-the-badge">
+   </div>
 
 Description
 -----------
