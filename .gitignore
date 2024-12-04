@@ -4,3 +4,6 @@
 *.iso
 *.hdd
 _build/
+.dist/
+.venv/
+.DS_Store
