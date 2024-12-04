@@ -51,6 +51,8 @@ Upcoming Milestones
 
       -  Use `SSFN <https://wiki.osdev.org/Scalable_Screen_Font>`__ to
          render things for ease
+   
+   -  Complete using sphinx documentation for clarity and buildability
 
 -  **2025**:
 
