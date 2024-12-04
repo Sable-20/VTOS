@@ -1,4 +1,4 @@
-.. image:: static/imgs/logo.svg
-   :width: 300
-   :alt: VTOS
-   :align: center
+<div align="center">
+   <img src="static/imgs/logo.svg" width="300px" alt="Project Logo" />
+    <!-- <h1>VTOS</h1> -->
+</div>
