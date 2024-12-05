@@ -1,3 +1,3 @@
 docs: Doxygen conf.py
 	doxygen Doxygen
-	sphinx-build -M html . ../_build
+	sphinx-build -M html . ../_build --color --verbose

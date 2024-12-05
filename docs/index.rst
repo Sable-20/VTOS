@@ -23,3 +23,4 @@ documentation for details.
 
    kmain
    mem.h
+   stdio.h

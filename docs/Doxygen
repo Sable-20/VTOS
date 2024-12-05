@@ -1071,7 +1071,8 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which Doxygen is
 # run.
 
-EXCLUDE                = ../kernel/kernel/limine.h
+EXCLUDE                = ../kernel/kernel/limine.h 
+EXCLUDE               += ../kernel/include/kernel/ssfn/ssfn.h
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

@@ -97,7 +97,9 @@ override LDFLAGS += \
 override CFILES := $(shell cd kernel && find -L * -type f -name '*.c' | LC_ALL=C sort)
 override ASFILES := $(shell cd kernel && find -L * -type f -name '*.S' | LC_ALL=C sort)
 override NASMFILES := $(shell cd kernel && find -L * -type f -name '*.asm' | LC_ALL=C sort)
-override OBJ := $(addprefix obj/,$(CFILES:.c=.c.o) $(ASFILES:.S=.S.o) $(NASMFILES:.asm=.asm.o))
+# override FONTFILES := $(shell cd include && find -L * type f -name '*.psf' | LC_ALL=C sort)
+override OBJ := $(addprefix obj/,$(CFILES:.c=.c.o) $(ASFILES:.S=.S.o) $(NASMFILES:.asm=.asm.o) 
+# $(FONTFILES:.psf=.psf.o))
 override HEADER_DEPS := $(addprefix obj/,$(CFILES:.c=.c.d) $(ASFILES:.S=.S.d))
 
 # Default target.
@@ -121,6 +123,11 @@ bin/$(OUTPUT): Makefile linker.ld $(OBJ) cc-runtime-x86_64/cc-runtime.a
 
 # Include header dependencies.
 -include $(HEADER_DEPS)
+
+# Compilation rules for *.psf files.
+# obj/%.psf.o: include/%.psf Makefile
+#     mkdir -p "$$(dirname $@)"
+#     objcopy -O elf64-x86-64 -B i386 -I binary $< -o $@
 
 # Compilation rules for *.c files.
 obj/%.c.o: kernel/%.c Makefile

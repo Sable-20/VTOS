@@ -57,6 +57,8 @@ Upcoming Milestones
 :FY 2025:
 
    #.  [Future Feature]: Terminal Scrolling
+   #.  paging 
+   #.  memory management and switching from `SSF` to `PSF` fonts
    #.  modules
    #.  Rust
 
