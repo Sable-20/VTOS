@@ -56,10 +56,12 @@ Upcoming Milestones
    |CHECKED_BOX| Complete using sphinx documentation for clarity and buildability
    |UNCHECKED_BOX| Write and load IDT (GDT is provided according to `Limine Boot Protocol Specification <https://github.com/limine-bootloader/limine/blob/trunk/PROTOCOL.md#machine-state-at-entry>`__ 
 
-.. important::
+.. warning::
+
    IDT is not provided by |LBP| according to the specification
 
 .. note::
+
    SSFN may not be used, if memory management is completed first PSF will be used instead
 
 :FY 2025:
@@ -75,6 +77,7 @@ Upcoming Milestones
    |UNCHECKED_BOX|  Rust
 
 .. note::
+
    paging provided by |LBP|
 
 We're excited about what's coming and will keep you updated as we
