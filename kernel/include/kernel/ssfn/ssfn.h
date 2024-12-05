@@ -29,7 +29,7 @@
  */
 
 #ifndef _SSFN_H_
-#define _SSFN_H_
+#define _SSFN_H_ 
 
 #define SSFN_VERSION 0x0200
 

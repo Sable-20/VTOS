@@ -9,29 +9,35 @@
     @warning These functions should not be modified within the kernel. The only time they will be redefined is in @e libc for users to use and will use paging.
  */
 #ifndef KMEM_H_
-#define KMEM_H_
+#define KMEM_H_ 1
 
 #include <stddef.h>
 #include <stdint.h>
 
-/** @fn void *memcpy(void *dest, const void *src, size_t n)
-    @brief Copies memory from one location to another
-    @param dest The destination to move memory values (pointer)
-    @param src The source location to move memory from (pointer)
-    @param n The size of the memory to move
-
-    @version 0.0.1
- */
+/***********************************************************//**
+ * @fn void *memcpy(void *dest, const void *src, size_t n)
+ * @brief Copies memory from one location to another
+ * @param dest The destination to move memory values (pointer)
+ * @param src The source location to move memory from (pointer)
+ * @param n The size of the memory to move
+ *
+ * @version 0.0.1
+ * @author Sable Ayala
+ * @date 05/12/2024
+ *************************************************************/
 void *memcpy(void *dest, const void *src, size_t n);
 
-/** @fn void *memset(void *s, int c, size_t n)
-    @brief Fill a block of memory with a particular value
-    @param s The starting address of memory to be filled
-    @param c The value to be filled
-    @param n The number of bytes to be filled starting from \f$s\f$ to be filled
-
-    @version 0.0.1
- */
+/*****************************************************************************//**
+ * @fn void *memset(void *s, int c, size_t n)
+ * @brief Fill a block of memory with a particular value
+ * @param s The starting address of memory to be filled
+ * @param c The value to be filled
+ * @param n The number of bytes to be filled starting from \f$s\f$ to be filled
+ *
+ * @version 0.0.1
+ * @author Sable Ayala
+ * @date 05/12/2024
+ ******************************************************************************/
 void *memset(void *s, int c, size_t n);
 /** @fn void *memmove(void *dest, const void *src, size_t n)
     @brief Copy a block of memory from a location to another

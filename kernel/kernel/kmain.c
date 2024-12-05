@@ -1,8 +1,14 @@
 #include <stdbool.h>
 #include <limine.h>
 
-// USER DEFINED HEADERS
+// USER DEFINED HEADERS ////
 #include <kernel/mem/mem.h>
+////////////////////////////
+
+/// EXTERNS //////////
+//////////////////////
+
+// TODO: convert all comments to Doxygen banner style comments
 
 // Set the base revision to 3, this is recommended as this is the latest
 // base revision described by the Limine boot protocol specification.
