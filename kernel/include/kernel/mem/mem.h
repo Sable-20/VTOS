@@ -1,13 +1,13 @@
-/** @file mem.h
-    @brief File holding the signatures of special memory function
+/**************************************************************************//** 
+ * @file mem.h
+ * @brief File holding the signatures of special memory function
+ *
+ * @note GCC and Clang reserve the right to generate calls to the following 4 functions even if they are not directly called. Implement them as the C specification mandates. DO NOT remove or rename these functions, or stuff will eventually break!
 
-    GCC and Clang reserve the right to generate calls to the following
-    4 functions even if they are not directly called.
-    Implement them as the C specification mandates.
-    DO NOT remove or rename these functions, or stuff will eventually break!
+ * @warning These functions should not be modified within the kernel. The only time they will be redefined is in @e libc for users to use and will use paging.
 
-    @warning These functions should not be modified within the kernel. The only time they will be redefined is in @e libc for users to use and will use paging.
- */
+ * Functions outside of `memcmp`, `memmove`, `memcopy` and `memset` still abide by the warning but are used for the allocator, and should be considered temporary
+ ******************************************************************************/
 #ifndef KMEM_H_
 #define KMEM_H_ 1
 
@@ -62,5 +62,59 @@ void *memmove(void *dest, const void *src, size_t n);
     @snippet snippets/mem.example.c memcmp
  */
 int memcmp(const void *s1, const void *s2, size_t n);
+
+/***********************************************************//**
+ * @fn int liballoc_lock()
+ * 
+ * @version 0.0.1
+ * @return success or unsuccessful
+ * @remark Unstable and subject to change
+ *
+ * @author Sable Ayala
+ * @date 05/12/2024
+ * @todo write brief and use snippets for showing implementation
+ ***************************************************************/
+int liballoc_lock();
+
+/*************************************************************//**
+ * @fn int liballoc_unlock()
+ * @return success of unsuccessful
+ *
+ * @version 0.0.1
+ * @remark Unstable and subject to change
+ *
+ * @author Sable Ayala
+ * @date 05/12/2024
+ * @todo write brief and use snippets for showing implementation
+ ***************************************************************/
+int liballoc_unlock();
+
+/*************************************************************************//**
+ * @fn void* liballoc_alloc(int pages)
+ * @param pages the number of pages to allocate for usage
+ * 
+ * @version 0.0.1
+ * @remark unstable and subject to change
+ *
+ * @author Sable Ayala
+ * @date 05/12/2024
+ * @todo write brief and use snippets for showing implementation (if relevant)
+ *****************************************************************************/
+void* liballoc_alloc(int pages);
+
+/*************************************************************//**
+ * @fn int liballoc_free(void* ptr, int pages)
+ * @param ptr pointer to the memory to free
+ * @param pages the amount of pages to free
+ * @return success or unsuccessful
+ *
+ * @version 0.0.1
+ * @remark unstable and subject to change
+ * 
+ * @author Sable Ayala
+ * @date 05/12/2024
+ * @todo write brief and use snippets for showing implementations
+ ****************************************************************/
+int liballoc_free(void* ptr, int pages);
 
 #endif

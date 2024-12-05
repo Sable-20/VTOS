@@ -8,6 +8,8 @@
 /// EXTERNS //////////
 //////////////////////
 
+// TODO: document with doxygen style and generate documentation
+
 // TODO: convert all comments to Doxygen banner style comments
 
 // Set the base revision to 3, this is recommended as this is the latest

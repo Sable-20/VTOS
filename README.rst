@@ -29,40 +29,55 @@ and all those *fancy* things.
 Installation
 ------------
 
-Install the project with npm:
+Build the project into an iso
 
 .. code:: bash
 
    # if you are on Mac
    ./mac.sh 
-   # this will build the iso for you to use
+   # other systems
+   make
 
 Roadmap
 -------
 
-Here’s a glimpse into the exciting journey ahead for our project:
+Here's a glimpse into the exciting journey ahead for our project:
 
 Upcoming Milestones
 ~~~~~~~~~~~~~~~~~~~
 
 :Q4 2024:
 
-   #. kprint() and serial output
+   |UNCHECKED_BOX| kprint() and serial output
 
-      - Use `SSFN <https://wiki.osdev.org/Scalable_Screen_Font>`__ to
+      |UNCHECKED_BOX| Use `SSFN <https://wiki.osdev.org/Scalable_Screen_Font>`__ to
          render things for ease
    
-   #. Complete using sphinx documentation for clarity and buildability
+   |CHECKED_BOX| Complete using sphinx documentation for clarity and buildability
+   |UNCHECKED_BOX| Write and load IDT (GDT is provided according to `Limine Boot Protocol Specification <https://github.com/limine-bootloader/limine/blob/trunk/PROTOCOL.md#machine-state-at-entry>`__ 
+
+.. important::
+   IDT is not provided by |LBP| according to the specification
+
+.. note::
+   SSFN may not be used, if memory management is completed first PSF will be used instead
 
 :FY 2025:
 
-   #.  [Future Feature]: Terminal Scrolling
-   #.  paging 
-   #.  memory management and switching from `SSF` to `PSF` fonts
-   #.  modules
-   #.  Rust
+   |UNCHECKED_BOX|  Terminal Scrolling
+   |CHECKED_BOX|  paging 
+   |UNCHECKED_BOX|  memory management and use `PSF` fonts 
+      - `liballoc <https://github.com/blanham/liballoc/tree/master>`__ used for memory management
+   
 
-We’re excited about what’s coming and will keep you updated as we
+:Long Term:
+   |UNCHECKED_BOX|  modules
+   |UNCHECKED_BOX|  Rust
+
+.. note::
+   paging provided by |LBP|
+
+We're excited about what's coming and will keep you updated as we
 progress. Your feedback and support are crucial as we build the future!
 
 Contributors
@@ -71,3 +86,16 @@ Contributors
 -  **Sable-20**: `Contributer <https://github.com/Sable-20>`__
 
 A big thank you to everyone who made this project possible!
+
+
+.. |LBP| raw:: html
+
+   <abbr title="Limine Boot Protocol">LBP</abbr>
+
+.. |UNCHECKED_BOX| raw:: html
+   
+   <p>&#9744</p>
+
+.. |CHECKED_BOX| raw:: html
+
+   <p>&#9745</p>
