@@ -18,9 +18,10 @@ documentation for details.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :caption: Contents:
 
    kmain
-   mem.h
+   mem
    stdio.h
+   interrupts

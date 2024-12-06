@@ -3,6 +3,7 @@
 
 // USER DEFINED HEADERS ////
 #include <kernel/mem/mem.h>
+#include <kernel/interrupts/idt.h>
 ////////////////////////////
 
 /// EXTERNS //////////
@@ -63,6 +64,8 @@ void kmain(void) {
 
     // Fetch the first framebuffer.
     struct limine_framebuffer *framebuffer = framebuffer_request.response->framebuffers[0];
+
+    load_idt();
 
     // TODO: enable the SSFN renderer with a function
 

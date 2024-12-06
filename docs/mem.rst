@@ -1,7 +1,14 @@
-.. _mem.h:
+.. _mem:
 
-include/kernel/mem.h
-====================
+=====================
+include/kernel/mem
+=====================
+
+mem.h 
+======
+
+Functions
+----------
 
 .. doxygenfunction:: memcpy
    :project: VTOS

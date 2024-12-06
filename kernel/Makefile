@@ -98,7 +98,7 @@ override CFILES := $(shell cd kernel && find -L * -type f -name '*.c' | LC_ALL=C
 override ASFILES := $(shell cd kernel && find -L * -type f -name '*.S' | LC_ALL=C sort)
 override NASMFILES := $(shell cd kernel && find -L * -type f -name '*.asm' | LC_ALL=C sort)
 # override FONTFILES := $(shell cd include && find -L * type f -name '*.psf' | LC_ALL=C sort)
-override OBJ := $(addprefix obj/,$(CFILES:.c=.c.o) $(ASFILES:.S=.S.o) $(NASMFILES:.asm=.asm.o) 
+override OBJ := $(addprefix obj/,$(CFILES:.c=.c.o) $(ASFILES:.S=.S.o) $(NASMFILES:.asm=.asm.o))
 # $(FONTFILES:.psf=.psf.o))
 override HEADER_DEPS := $(addprefix obj/,$(CFILES:.c=.c.d) $(ASFILES:.S=.S.d))
 
