@@ -24,5 +24,5 @@ Functions
 .. doxygenfunction:: load_idt
    :project: VTOS 
 
-.. doxygenfunction:: set_idt_entry
+.. doxygenfunction:: idt_set_descriptor
    :project: VTOS 

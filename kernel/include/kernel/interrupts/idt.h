@@ -27,7 +27,7 @@ typedef struct {
 } InterruptDescriptor64 __attribute__((packed));
 
 /***********************************************************************//**
- * @struct IDTR
+ * @struct idtr_t
  *
  * @author Sable Ayala
  * @date 05/12/2024
