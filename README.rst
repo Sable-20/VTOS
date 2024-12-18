@@ -48,12 +48,16 @@ Requirements to build the project:
 * Doxygen 
 * Sphinx
 
+**To build the operating system and make an iso**
 .. code:: bash
 
    # if you are on Mac
    ./mac.sh 
    # other systems
    make
+
+**To build the documentation**
+.. important:: Sphinx and Doxygen are required
 
 Roadmap
 -------
