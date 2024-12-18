@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>include/kernel/interrupts &#8212; VTOS 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="include/kernel/stdio" href="stdio.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="stdio.html" title="include/kernel/stdio"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">VTOS 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">include/kernel/interrupts</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="include-kernel-interrupts">
+<span id="interrupts"></span><h1>include/kernel/interrupts<a class="headerlink" href="#include-kernel-interrupts" title="Link to this heading">¶</a></h1>
+<section id="idt-h">
+<h2>idt.h<a class="headerlink" href="#idt-h" title="Link to this heading">¶</a></h2>
+<section id="structs">
+<h3>Structs<a class="headerlink" href="#structs" title="Link to this heading">¶</a></h3>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv411idt_entry_t">
+<span id="_CPPv311idt_entry_t"></span><span id="_CPPv211idt_entry_t"></span><span id="idt_entry_t"></span><span class="target" id="structidt__entry__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">idt_entry_t</span></span></span><a class="headerlink" href="#_CPPv411idt_entry_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Sable Ayala </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>17/12/2024 </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11idt_entry_t7isr_lowE">
+<span id="_CPPv3N11idt_entry_t7isr_lowE"></span><span id="_CPPv2N11idt_entry_t7isr_lowE"></span><span id="idt_entry_t::isr_low__uint16_t"></span><span class="target" id="structidt__entry__t_1a5d946c69fd0b6df27aa026e200b80e7a"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isr_low</span></span></span><a class="headerlink" href="#_CPPv4N11idt_entry_t7isr_lowE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>offset bits 0..15 </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11idt_entry_t9kernel_csE">
+<span id="_CPPv3N11idt_entry_t9kernel_csE"></span><span id="_CPPv2N11idt_entry_t9kernel_csE"></span><span id="idt_entry_t::kernel_cs__uint16_t"></span><span class="target" id="structidt__entry__t_1abe13e03d3f6011c01f771c44f9ae33a7"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kernel_cs</span></span></span><a class="headerlink" href="#_CPPv4N11idt_entry_t9kernel_csE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>a code segment selector in GDT or LDT </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11idt_entry_t3istE">
+<span id="_CPPv3N11idt_entry_t3istE"></span><span id="_CPPv2N11idt_entry_t3istE"></span><span id="idt_entry_t::ist__uint8_t"></span><span class="target" id="structidt__entry__t_1ab53c29c613ee58fa22491f0a2dcd258f"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ist</span></span></span><a class="headerlink" href="#_CPPv4N11idt_entry_t3istE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>bits 0..2 holds IST offset, rest of bits are zero </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11idt_entry_t10attributesE">
+<span id="_CPPv3N11idt_entry_t10attributesE"></span><span id="_CPPv2N11idt_entry_t10attributesE"></span><span id="idt_entry_t::attributes__uint8_t"></span><span class="target" id="structidt__entry__t_1a04f2eda58d1a6d06aa28d4614b9240cf"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">attributes</span></span></span><a class="headerlink" href="#_CPPv4N11idt_entry_t10attributesE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>gate type, dpl, and p fields </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11idt_entry_t7isr_midE">
+<span id="_CPPv3N11idt_entry_t7isr_midE"></span><span id="_CPPv2N11idt_entry_t7isr_midE"></span><span id="idt_entry_t::isr_mid__uint16_t"></span><span class="target" id="structidt__entry__t_1ad25f5577dce79727340bcae6c30c0119"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isr_mid</span></span></span><a class="headerlink" href="#_CPPv4N11idt_entry_t7isr_midE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>offset bits 16..31 </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11idt_entry_t8isr_highE">
+<span id="_CPPv3N11idt_entry_t8isr_highE"></span><span id="_CPPv2N11idt_entry_t8isr_highE"></span><span id="idt_entry_t::isr_high__uint32_t"></span><span class="target" id="structidt__entry__t_1a026c424c56bd7dfac29ee7f38e1a0c7c"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isr_high</span></span></span><a class="headerlink" href="#_CPPv4N11idt_entry_t8isr_highE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>offset bits 32..63 </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11idt_entry_t8reservedE">
+<span id="_CPPv3N11idt_entry_t8reservedE"></span><span id="_CPPv2N11idt_entry_t8reservedE"></span><span id="idt_entry_t::reserved__uint32_t"></span><span class="target" id="structidt__entry__t_1aa1f2db31473fad559de3af8a5e911706"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reserved</span></span></span><a class="headerlink" href="#_CPPv4N11idt_entry_t8reservedE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>reserved </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv46idtr_t">
+<span id="_CPPv36idtr_t"></span><span id="_CPPv26idtr_t"></span><span id="idtr_t"></span><span class="target" id="structidtr__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">idtr_t</span></span></span><a class="headerlink" href="#_CPPv46idtr_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Sable Ayala </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>05/12/2024 </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6idtr_t5limitE">
+<span id="_CPPv3N6idtr_t5limitE"></span><span id="_CPPv2N6idtr_t5limitE"></span><span id="idtr_t::limit__uint16_t"></span><span class="target" id="structidtr__t_1a05e00d99407bba8dbd19440cc4969762"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">limit</span></span></span><a class="headerlink" href="#_CPPv4N6idtr_t5limitE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>the limitof the idr (in long mode should be 0xFFF) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6idtr_t5basedE">
+<span id="_CPPv3N6idtr_t5basedE"></span><span id="_CPPv2N6idtr_t5basedE"></span><span id="idtr_t::based__uint16_t"></span><span class="target" id="structidtr__t_1a83bd3b8ee297925e270f534fd7343eee"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">based</span></span></span><a class="headerlink" href="#_CPPv4N6idtr_t5basedE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>the base field has the <em>logical address</em> of the idt </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h3>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418idt_set_descriptor7uint8_tPv7uint8_t">
+<span id="_CPPv318idt_set_descriptor7uint8_tPv7uint8_t"></span><span id="_CPPv218idt_set_descriptor7uint8_tPv7uint8_t"></span><span id="idt_set_descriptor__uint8_t.voidP.uint8_t"></span><span class="target" id="idt_8h_1afee5973da14677e6be5c4d10fed7d8d5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">idt_set_descriptor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vector</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">isr</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">flags</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418idt_set_descriptor7uint8_tPv7uint8_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p><dl>
+<dt class="sig sig-object cpp">
+<em><span class="pre">Todo:</span></em></dt>
+<dd><p>params</p>
+</dd></dl>
+
+</p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Sable Ayala </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>05/12/2024 </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv48idt_initPv">
+<span id="_CPPv38idt_initPv"></span><span id="_CPPv28idt_initPv"></span><span id="idt_init__voidP"></span><span class="target" id="idt_8h_1abd859ee1b30542e45b5b848652fc5946"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">idt_init</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">idt_addr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48idt_initPv" title="Link to this definition">¶</a><br /></dt>
+<dd><p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Sable Ayala </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>17/12/2024 </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>idt_addr</strong> – the addess of the idt to load into</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv417exception_handlerv">
+<span id="_CPPv317exception_handlerv"></span><span id="_CPPv217exception_handlerv"></span><span id="exception_handler"></span><span class="target" id="idt_8h_1a207a4586ef788db4b8989939e887e4f7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exception_handler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417exception_handlerv" title="Link to this definition">¶</a><br /></dt>
+<dd><p><dl>
+<dt class="sig sig-object cpp">
+<em><span class="pre">Deprecated:</span></em></dt>
+<dd><p>This function should not be used and is slated for deletion</p>
+</dd></dl>
+
+</p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Sable Ayala </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>17/12/2024 </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">include/kernel/interrupts</a><ul>
+<li><a class="reference internal" href="#idt-h">idt.h</a><ul>
+<li><a class="reference internal" href="#structs">Structs</a><ul>
+<li><a class="reference internal" href="#_CPPv411idt_entry_t"><code class="docutils literal notranslate"><span class="pre">idt_entry_t</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N11idt_entry_t7isr_lowE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::isr_low</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N11idt_entry_t9kernel_csE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::kernel_cs</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N11idt_entry_t3istE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::ist</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N11idt_entry_t10attributesE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::attributes</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N11idt_entry_t7isr_midE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::isr_mid</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N11idt_entry_t8isr_highE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::isr_high</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N11idt_entry_t8reservedE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::reserved</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv46idtr_t"><code class="docutils literal notranslate"><span class="pre">idtr_t</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N6idtr_t5limitE"><code class="docutils literal notranslate"><span class="pre">idtr_t::limit</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N6idtr_t5basedE"><code class="docutils literal notranslate"><span class="pre">idtr_t::based</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#functions">Functions</a><ul>
+<li><a class="reference internal" href="#_CPPv418idt_set_descriptor7uint8_tPv7uint8_t"><code class="docutils literal notranslate"><span class="pre">idt_set_descriptor()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv48idt_initPv"><code class="docutils literal notranslate"><span class="pre">idt_init()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv417exception_handlerv"><code class="docutils literal notranslate"><span class="pre">exception_handler()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stdio.html"
+                          title="previous chapter">include/kernel/stdio</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/interrupts.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="stdio.html" title="include/kernel/stdio"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">VTOS 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">include/kernel/interrupts</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Sable.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

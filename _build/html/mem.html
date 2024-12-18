@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>include/kernel/mem &#8212; VTOS 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="include/kernel/stdio" href="stdio.html" />
+    <link rel="prev" title="Main Kernel File" href="kmain.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="stdio.html" title="include/kernel/stdio"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="kmain.html" title="Main Kernel File"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">VTOS 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">include/kernel/mem</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="include-kernel-mem">
+<span id="mem"></span><h1>include/kernel/mem<a class="headerlink" href="#include-kernel-mem" title="Link to this heading">¶</a></h1>
+<section id="mem-h">
+<h2>mem.h<a class="headerlink" href="#mem-h" title="Link to this heading">¶</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h3>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46memcpyPvPKv6size_t">
+<span id="_CPPv36memcpyPvPKv6size_t"></span><span id="_CPPv26memcpyPvPKv6size_t"></span><span id="memcpy__voidP.voidCP.s"></span><span class="target" id="mem_8h_1aba088e716bccbc96d42da97e96316df1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">memcpy</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dest</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46memcpyPvPKv6size_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Copies memory from one location to another. </p>
+<p><dl class="simple">
+<dt><strong>Version</strong></dt><dd><p>0.0.1 </p>
+</dd>
+<dt><strong>Author</strong></dt><dd><p>Sable Ayala </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>05/12/2024 </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest</strong> – The destination to move memory values (pointer) </p></li>
+<li><p><strong>src</strong> – The source location to move memory from (pointer) </p></li>
+<li><p><strong>n</strong> – The size of the memory to move</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46memsetPvi6size_t">
+<span id="_CPPv36memsetPvi6size_t"></span><span id="_CPPv26memsetPvi6size_t"></span><span id="memset__voidP.i.s"></span><span class="target" id="mem_8h_1a313175102214d45434bf045db18dddf0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">memset</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">s</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46memsetPvi6size_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Fill a block of memory with a particular value. </p>
+<p><dl class="simple">
+<dt><strong>Version</strong></dt><dd><p>0.0.1 </p>
+</dd>
+<dt><strong>Author</strong></dt><dd><p>Sable Ayala </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>05/12/2024 </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – The starting address of memory to be filled </p></li>
+<li><p><strong>c</strong> – The value to be filled </p></li>
+<li><p><strong>n</strong> – The number of bytes to be filled starting from <span class="math notranslate nohighlight">\(s\)</span> to be filled</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47memmovePvPKv6size_t">
+<span id="_CPPv37memmovePvPKv6size_t"></span><span id="_CPPv27memmovePvPKv6size_t"></span><span id="memmove__voidP.voidCP.s"></span><span class="target" id="mem_8h_1a340d11725e5c81a874f508fbcdf1c5ef"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">memmove</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dest</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47memmovePvPKv6size_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Copy a block of memory from a location to another. </p>
+<p><dl class="simple">
+<dt><strong>Version</strong></dt><dd><p>0.0.1 </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest</strong> – Destination of memory block </p></li>
+<li><p><strong>src</strong> – Memory block to move </p></li>
+<li><p><strong>n</strong> – Size of the memory block</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46memcmpPKvPKv6size_t">
+<span id="_CPPv36memcmpPKvPKv6size_t"></span><span id="_CPPv26memcmpPKvPKv6size_t"></span><span id="memcmp__voidCP.voidCP.s"></span><span class="target" id="mem_8h_1a9e6df54ee04e18a3772335580e2ed872"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">memcmp</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">s1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">s2</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46memcmpPKvPKv6size_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Compate two blocks of memory. </p>
+<p>
+Example usage: <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">arr1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">arr2</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">};</span>
+
+<span class="w">  </span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">memcmp</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span><span class="w"> </span><span class="n">arr2</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">arr1</span><span class="p">));</span><span class="w"> </span><span class="c1">// result != 0</span>
+</pre></div>
+</div>
+ <dl class="simple">
+<dt><strong>Version</strong></dt><dd><p>0.0.1</p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> – Pointer to LHS block of memory </p></li>
+<li><p><strong>s2</strong> – Pointer to RHS block of memory </p></li>
+<li><p><strong>n</strong> – The number of bytes to be compared</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>This function returns <em>&lt;0</em> if <em>s1</em> is less than <em>s2</em>, <em>&gt;0</em> <em>s2</em> is less than <em>s1</em> and <em>==0</em> if <em>s1</em> is equivalent to <em>s2</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">include/kernel/mem</a><ul>
+<li><a class="reference internal" href="#mem-h">mem.h</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a><ul>
+<li><a class="reference internal" href="#_CPPv46memcpyPvPKv6size_t"><code class="docutils literal notranslate"><span class="pre">memcpy()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv46memsetPvi6size_t"><code class="docutils literal notranslate"><span class="pre">memset()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47memmovePvPKv6size_t"><code class="docutils literal notranslate"><span class="pre">memmove()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv46memcmpPKvPKv6size_t"><code class="docutils literal notranslate"><span class="pre">memcmp()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="kmain.html"
+                          title="previous chapter">Main Kernel File</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="stdio.html"
+                          title="next chapter">include/kernel/stdio</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mem.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="stdio.html" title="include/kernel/stdio"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="kmain.html" title="Main Kernel File"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">VTOS 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">include/kernel/mem</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Sable.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>
