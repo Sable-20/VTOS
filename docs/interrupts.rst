@@ -23,3 +23,9 @@ Functions
 
 .. doxygenfunction:: idt_set_descriptor
    :project: VTOS 
+
+.. doxygenfunction:: idt_init 
+   :project: VTOS
+
+.. doxygenfunction:: exception_handler
+   :project: VTOS

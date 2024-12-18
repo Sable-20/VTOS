@@ -44,25 +44,26 @@ typedef struct {
  * @author Sable Ayala
  * @date 17/12/2024
  *******************************************************/
-void idt_init(void);
+void idt_init(void* idt_addr);
 
-/*****************************************************************//**
+/********************************************************************//**
  * @fn void idt_set_descriptor(uint8_t vector, void* isr, uint8_t flags)
  * @todo params
  * 
  * @author Sable Ayala
  * @date 05/12/2024
- ********************************************************************/
+ ***********************************************************************/
 void idt_set_descriptor(uint8_t vector, void* isr, uint8_t flags);
 
 /*********************************************************//**
  * @fn void exception_handler()
  * 
- * @note __attribute__((noreturn)) 
+ * @deprecated This function should not be used and is slated for deletion
  *
  * @author Sable Ayala
  * @date 17/12/2024
  */
+void exception_handler();
 
 // TODO
 /*
