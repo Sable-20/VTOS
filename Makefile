@@ -112,3 +112,6 @@ clean:
 distclean: clean
 	$(MAKE) -C kernel distclean
 	rm -rf kernel-deps limine ovmf
+
+docs:
+	cd docs && make
