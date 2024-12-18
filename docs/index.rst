@@ -23,5 +23,6 @@ documentation for details.
 
    kmain
    mem
-   stdio.h
+   stdio
    interrupts
+   

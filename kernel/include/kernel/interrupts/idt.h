@@ -11,20 +11,20 @@
 #include <stdint.h>
 
 /**************************************************************************//** 
- * @struct InterruptDescriptor64
+ * @struct idt_entry_t
  * 
  * @author Sable Ayala
- * @date 05/12/2024
+ * @date 17/12/2024
  ******************************************************************************/
 typedef struct {
-  uint16_t offset_1;      //!< offset bits 0..15
-  uint16_t selector;      //!< a code segment selector in GDT or LDT
+  uint16_t isr_low;      //!< offset bits 0..15
+  uint16_t kernel_cs;      //!< a code segment selector in GDT or LDT
   uint8_t ist;            //!< bits 0..2 holds IST offset, rest of bits are zero
-  uint8_t type_attributes;//!< gate type, dpl, and p fields
-  uint16_t offset_2;      //!< offset bits 16..31
-  uint32_t offset_3;      //!< offset bits 32..63
-  uint32_t zero;          //!< reserved
-} InterruptDescriptor64 __attribute__((packed));
+  uint8_t attributes;//!< gate type, dpl, and p fields
+  uint16_t isr_mid;      //!< offset bits 16..31
+  uint32_t isr_high;      //!< offset bits 32..63
+  uint32_t reserved;          //!< reserved
+} idt_entry_t __attribute__((packed));
 
 /***********************************************************************//**
  * @struct idtr_t
@@ -38,24 +38,31 @@ typedef struct {
 } idtr_t __attribute__((packed)) ;
 
 /****************************************************//**
- * @fn void load_idt(void* idt_addr)
+ * @fn void idt_init(void* idt_addr)
  * @param idt_addr the addess of the idt to load into
- * @deprecated
  *
  * @author Sable Ayala
- * @date 05/12/2024
+ * @date 17/12/2024
  *******************************************************/
-void load_idt(void);
+void idt_init(void);
 
 /*****************************************************************//**
  * @fn void idt_set_descriptor(uint8_t vector, void* isr, uint8_t flags)
  * @todo params
- * @deprecated
  * 
  * @author Sable Ayala
  * @date 05/12/2024
  ********************************************************************/
 void idt_set_descriptor(uint8_t vector, void* isr, uint8_t flags);
+
+/*********************************************************//**
+ * @fn void exception_handler()
+ * 
+ * @note __attribute__((noreturn)) 
+ *
+ * @author Sable Ayala
+ * @date 17/12/2024
+ */
 
 // TODO
 /*

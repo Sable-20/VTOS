@@ -3,6 +3,8 @@
 Main Kernel File
 ================
 
+TODO: interrupts
+
 .. code-block:: c 
 
   int kmain(void) {

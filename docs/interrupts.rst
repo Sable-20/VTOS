@@ -10,7 +10,7 @@ idt.h
 Structs
 -------
 
-.. doxygenstruct:: InterruptDescriptor64
+.. doxygenstruct:: idt_entry_t
    :project: VTOS 
    :members:
 
@@ -20,9 +20,6 @@ Structs
 
 Functions
 ---------
-
-.. doxygenfunction:: load_idt
-   :project: VTOS 
 
 .. doxygenfunction:: idt_set_descriptor
    :project: VTOS 

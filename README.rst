@@ -13,7 +13,12 @@
 .. raw:: html
 
    <div align="center">
-      <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Sable-20/VTOS?style=for-the-badge">
+      <a href="https://github.com/Sable-20/VTOS">
+         <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Sable-20/VTOS?style=for-the-badge">
+      </a>
+      <a href="https://wakatime.com/badge/user/ea72ab72-e3d9-41de-baf2-b89253f9cca5/project/4bb466bc-384a-4776-8ca2-1b3a326aec6d">
+         <img src="https://wakatime.com/badge/user/ea72ab72-e3d9-41de-baf2-b89253f9cca5/project/4bb466bc-384a-4776-8ca2-1b3a326aec6d.svg?style=for-the-badge" alt="wakatime">
+      </a>
    </div>
 
 Description
@@ -29,7 +34,17 @@ and all those *fancy* things.
 Installation
 ------------
 
-Build the project into an iso
+Requirements to build the project:
+- binutils
+- xorriso
+- x86_64 cross compiler
+- git
+- a c compiler 
+- nasm
+
+*If you want to build documentation:*
+- Doxygen 
+- Sphinx
 
 .. code:: bash
 
@@ -54,7 +69,8 @@ Upcoming Milestones
          render things for ease
    
    |CHECKED_BOX| Complete using sphinx documentation for clarity and buildability
-   |UNCHECKED_BOX| Write and load IDT (GDT is provided according to `Limine Boot Protocol Specification <https://github.com/limine-bootloader/limine/blob/trunk/PROTOCOL.md#machine-state-at-entry>`__ 
+   |UNCHECKED_BOX| Write GDT beyond limine default
+   |UNCHECKED_BOX| Write and load IDT (GDT is provided according to `Limine Boot Protocol Specification <https://github.com/limine-bootloader/limine/blob/trunk/PROTOCOL.md#machine-state-at-entry>`__ )
 
 > IDT is not provided by |LBP| according to the specification
 

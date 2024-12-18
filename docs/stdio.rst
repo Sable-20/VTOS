@@ -1,4 +1,4 @@
-.. _stdio.h:
+.. _stdio:
 
 ======================
 include/kernel/stdio
