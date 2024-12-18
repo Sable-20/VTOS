@@ -80,7 +80,7 @@ Here's a glimpse into the exciting journey ahead for our project:
 - [ ] Terminal Scrolling
 - [ ] paging 
 - [ ] memory management and use `PSF` fonts 
-      - [liballoc](https://github.com/blanham/liballoc/tree/master) used for memory management
+   - [liballoc](https://github.com/blanham/liballoc/tree/master) used for memory management
 
 > [!TIP]
 > We are considering using *jemalloc* instead
