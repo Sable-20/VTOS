@@ -35,16 +35,18 @@ Installation
 ------------
 
 Requirements to build the project:
-- binutils
-- xorriso
-- x86_64 cross compiler
-- git
-- a c compiler 
-- nasm
+
+* binutils
+* xorriso
+* x86_64 cross compiler
+* git
+* a c compiler 
+* nasm
 
 *If you want to build documentation:*
-- Doxygen 
-- Sphinx
+
+* Doxygen 
+* Sphinx
 
 .. code:: bash
 
