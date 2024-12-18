@@ -14,8 +14,8 @@
    <a href="https://github.com/Sable-20/VTOS">
       <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Sable-20/VTOS?style=for-the-badge">
    </a>
-   <a href="https://wakatime.com/badge/user/ea72ab72-e3d9-41de-baf2-b89253f9cca5/project/4bb466bc-384a-4776-8ca2-1b3a326aec6d">
-      <img src="https://wakatime.com/badge/user/ea72ab72-e3d9-41de-baf2-b89253f9cca5/project/4bb466bc-384a-4776-8ca2-1b3a326aec6d.svg?style=for-the-badge" alt="wakatime">
+   <a href="https://www.codefactor.io/repository/github/sable-20/vtos">
+      <img alt="CodeFactor Grade" src="https://img.shields.io/codefactor/grade/github/Sable-20/VTOS?style=for-the-badge">
    </a>
 </div>
 
