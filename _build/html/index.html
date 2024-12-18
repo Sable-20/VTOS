@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>VTOS documentation &#8212; VTOS 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Main Kernel File" href="kmain.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="kmain.html" title="Main Kernel File"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">VTOS 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">VTOS documentation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="vtos-documentation">
+<h1>VTOS documentation<a class="headerlink" href="#vtos-documentation" title="Link to this heading">¶</a></h1>
+<p><strong>VTOS</strong> is a hobby operating system that I am developing as a student while studying at UVM. While it is an operating system and a serious task I am also using it as a way to keep my programming skills sharp while I continue my studies and have less and less time to devote to a multitude of random programming projects that I would like to do.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This project is under active development</p>
+</div>
+<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
+documentation for details.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kmain.html">Main Kernel File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mem.html">include/kernel/mem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mem.html#mem-h">mem.h</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mem.html#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mem.html#_CPPv46memcpyPvPKv6size_t"><code class="docutils literal notranslate"><span class="pre">memcpy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mem.html#_CPPv46memsetPvi6size_t"><code class="docutils literal notranslate"><span class="pre">memset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mem.html#_CPPv47memmovePvPKv6size_t"><code class="docutils literal notranslate"><span class="pre">memmove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mem.html#_CPPv46memcmpPKvPKv6size_t"><code class="docutils literal notranslate"><span class="pre">memcmp()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stdio.html">include/kernel/stdio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interrupts.html">include/kernel/interrupts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interrupts.html#idt-h">idt.h</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="interrupts.html#structs">Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interrupts.html#_CPPv411idt_entry_t"><code class="docutils literal notranslate"><span class="pre">idt_entry_t</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="interrupts.html#_CPPv4N11idt_entry_t7isr_lowE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::isr_low</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="interrupts.html#_CPPv4N11idt_entry_t9kernel_csE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::kernel_cs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="interrupts.html#_CPPv4N11idt_entry_t3istE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::ist</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="interrupts.html#_CPPv4N11idt_entry_t10attributesE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::attributes</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="interrupts.html#_CPPv4N11idt_entry_t7isr_midE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::isr_mid</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="interrupts.html#_CPPv4N11idt_entry_t8isr_highE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::isr_high</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="interrupts.html#_CPPv4N11idt_entry_t8reservedE"><code class="docutils literal notranslate"><span class="pre">idt_entry_t::reserved</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="interrupts.html#_CPPv46idtr_t"><code class="docutils literal notranslate"><span class="pre">idtr_t</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="interrupts.html#_CPPv4N6idtr_t5limitE"><code class="docutils literal notranslate"><span class="pre">idtr_t::limit</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="interrupts.html#_CPPv4N6idtr_t5basedE"><code class="docutils literal notranslate"><span class="pre">idtr_t::based</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="interrupts.html#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interrupts.html#_CPPv418idt_set_descriptor7uint8_tPv7uint8_t"><code class="docutils literal notranslate"><span class="pre">idt_set_descriptor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupts.html#_CPPv48idt_initPv"><code class="docutils literal notranslate"><span class="pre">idt_init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupts.html#_CPPv417exception_handlerv"><code class="docutils literal notranslate"><span class="pre">exception_handler()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="kmain.html"
+                          title="next chapter">Main Kernel File</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="kmain.html" title="Main Kernel File"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">VTOS 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">VTOS documentation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Sable.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

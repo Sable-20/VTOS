@@ -3,7 +3,8 @@
 /ovmf
 *.iso
 *.hdd
-_build/
+_build/_doxygen/
+_build/doctrees
 .dist/
 .venv/
 .DS_Store
