@@ -14,8 +14,8 @@
    <a href="https://github.com/Sable-20/VTOS">
       <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Sable-20/VTOS?style=for-the-badge">
    </a>
-   <a href="https://www.codefactor.io/repository/github/sable-20/vtos">
-      <img alt="CodeFactor Grade" src="https://img.shields.io/codefactor/grade/github/Sable-20/VTOS?style=for-the-badge">
+   <a href="https://github.com/sable-20/VTOS">
+      <img alt="Codacy grade" src="https://img.shields.io/codacy/grade/b070e9d9c4b4437d85096bb969e3e81e?style=for-the-badge">
    </a>
 </div>
 
@@ -64,11 +64,11 @@ make docs
 Here's a glimpse into the exciting journey ahead for our project:
 
 
-- [ ] kprint() and serial output 
-   - [ ] Use [SSFN](https://wiki.osdev.org/Scalable_Screen_Font) for ease, eventually move to other more advanced options
-- [x] Complete using sphinx documentation for clarity
-- [ ] Write GDT beyond Limine default 
-- [ ] Write and load IDT
+* [ ] kprint() and serial output 
+   * [ ] Use [SSFN](https://wiki.osdev.org/Scalable_Screen_Font) for ease, eventually move to other more advanced options
+* [x] Complete using sphinx documentation for clarity
+* [ ] Write GDT beyond Limine default 
+* [ ] Write and load IDT
 
 > [!NOTE]
 > IDT is not provided according to [Limine Boot Protocol Specification](https://github.com/limine-bootloader/limine/blob/trunk/PROTOCOL.md#machine-state-at-entry)
@@ -77,16 +77,16 @@ Here's a glimpse into the exciting journey ahead for our project:
 > SSFN may not be used, if memory management is completed first PSF will be used instead
 
 
-- [ ] Terminal Scrolling
-- [ ] paging 
-- [ ] memory management and use `PSF` fonts 
-   - [liballoc](https://github.com/blanham/liballoc/tree/master) used for memory management
+* [ ] Terminal Scrolling
+* [ ] paging 
+* [ ] memory management and use `PSF` fonts 
+   * [liballoc](https://github.com/blanham/liballoc/tree/master) used for memory management
 
 > [!TIP]
 > We are considering using *jemalloc* instead
 
-- [ ] modules
-- [ ] Port Rust and other languages we see necessary
+* [ ] modules
+* [ ] Port Rust and other languages we see necessary
 
 > [!NOTE]
 > paging provided by *Limine Boot Protocol*
@@ -97,6 +97,6 @@ progress. Your feedback and support are crucial as we build the future!
 Contributors
 ------------
 
-- [**Sable-20 -- Contributer**](https://github.com/Sable-20>)
+* [**Sable-20 -- Contributer**](https://github.com/Sable-20>)
 
 A big thank you to everyone who made this project possible!
